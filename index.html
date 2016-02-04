@@ -6,13 +6,13 @@
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 </head>
-<body>
 
-	<div ng-controller="StoreController as store">
-		<h1>{{store.product.name}}</h1>
-		<h2>${{store.product.price}}</h2>
-		<p>{{store.product.description}}</p>
-		<button ng-show="store.product.canPurchase">Add to Cart</button>
+<body ng-controller="StoreController as store">
+	<div ng-repeat="product in store.products">
+		<h1>{{product.name}}</h1>
+		<h2>${{product.price}}</h2>
+		<p>{{product.description}}</p>
+		<button ng-show="product.canPurchase">Add to Cart</button>
 	</div>
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.0/angular.min.js"></script>
